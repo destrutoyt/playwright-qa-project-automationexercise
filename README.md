@@ -1,7 +1,7 @@
 # AutomationPractice QA Automation Project
 
 [![Coverage](https://img.shields.io/badge/Coverage-0%25-brightgreen)](https://github.com/destrutoyt/yourrepo)  
-[![Build Status](https://github.com/destrutoyt/qa-automation-automationexercise/actions/workflows/ci.yml/badge.svg)](https://github.com/destrutoyt/qa-automation-automationexercise/actions)
+![Build Status](https://img.shields.io/github/actions/workflow/status/destrutoyt/qa-automation-automationexercise/playwright.yml)
 
 ## 🚀 Project Overview
 
