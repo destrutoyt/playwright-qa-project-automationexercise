@@ -1,13 +1,13 @@
 # AutomationPractice QA Automation Project
 
-[![Coverage](https://img.shields.io/badge/Coverage-0%25-brightgreen)](https://github.com/yourusername/yourrepo)  
-[![Build Status](https://github.com/destrutoyt/yourrepo/actions/workflows/ci.yml/badge.svg)](https://github.com/destrutoyt/qa-automation-automationexercise/actions)
+[![Coverage](https://img.shields.io/badge/Coverage-0%25-brightgreen)](https://github.com/destrutoyt/yourrepo)  
+[![Build Status](https://github.com/destrutoyt/qa-automation-automationexercise/actions/workflows/ci.yml/badge.svg)](https://github.com/destrutoyt/qa-automation-automationexercise/actions)
 
 ## 🚀 Project Overview
 
 This repository contains a comprehensive QA automation suite targeting the [Automation Exercise](https://automationexercise.com/) demo e-commerce website.
 
-For detailed information about test objectives, scope, design, criteria, and risks, please refer to the [Test Plan](./test-plan.md).
+For detailed information about test objectives, scope, design, criteria, and risks, please refer to the [Test Plan](https://github.com/destrutoyt/qa-automation-automationexercise/blob/main/docs/test-plan.md).
 
 ## 🛠 Tools & Technologies Used
 
@@ -24,4 +24,4 @@ For detailed information about test objectives, scope, design, criteria, and ris
 
 ## 📄 License
 
-This project is licensed under the [MIT License](./LICENSE).
+This project is licensed under the [MIT License](https://github.com/destrutoyt/qa-automation-automationexercise/blob/main/LICENSE).
