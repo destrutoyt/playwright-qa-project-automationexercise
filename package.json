@@ -1,0 +1,29 @@
+{
+	"name": "qa-automation-automationexercise",
+	"version": "1.0.0",
+	"description": "QA automation project showcasing UI, API, and visual tests for AutomationExercise. Integrated with Docker, Allure, and CI/CD pipelines.",
+	"main": "index.js",
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/destrutoyt/qa-automation-automationexercise.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/destrutoyt/qa-automation-automationexercise/issues"
+	},
+	"homepage": "https://github.com/destrutoyt/qa-automation-automationexercise#readme",
+	"devDependencies": {
+		"@playwright/test": "^1.54.2",
+		"@types/node": "^24.2.0",
+		"allure-playwright": "^3.3.3"
+	},
+	"dependencies": {
+		"prettier": "^3.6.2"
+	}
+}
