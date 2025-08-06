@@ -38,7 +38,7 @@ This project performs end-to-end testing to the demo website [Automation Exercis
 | User Login (POST) | API | ⏳ | N/A |
 | Get Products (GET) | API | ⏳ | N/A |
 
-Icon Legend: ⏳ Not Started - 🔄 In Progress - ✅ Covered - 🚫 Out of Scope
+>Icon Legend: ⏳ Not Started - 🔄 In Progress - ✅ Covered - 🚫 Out of Scope
 
 ## Test Design Approach
 - Page Object Model (POM) used for reusability.
