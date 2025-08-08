@@ -1,12 +1,16 @@
 {
 	"name": "qa-automation-automationexercise",
-	"version": "1.0.0",
+	"version": "1.1",
 	"description": "QA automation project showcasing UI, API, and visual tests for AutomationExercise. Integrated with Docker, Allure, and CI/CD pipelines.",
 	"main": "index.js",
 	"directories": {
 		"doc": "docs"
 	},
-	"scripts": {},
+	"scripts": {
+		"test": "npx playwright test",
+		"test:headed": "npx playwright test --headed",
+		"test:debug": "npx playwright test --debug"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/destrutoyt/qa-automation-automationexercise.git"

@@ -1,6 +1,6 @@
 # Test Plan for AutomationPractice by Miguel Garces
 *Project Owner: Miguel Garces*  
-*Latest Revision: 8/6/2025*
+*Latest Revision: 8/7/2025*
 
 ## Project Overview
 This project performs end-to-end testing to the demo website [Automation Exercise](https://automationexercise.com/). It extensively covers major user flows such as login/registration, product filtering, checkout, and API functionality.
@@ -22,13 +22,14 @@ This project performs end-to-end testing to the demo website [Automation Exercis
 - [Allure](https://allurereport.org/) (Reporting tool)
 - Github Actions
 - [Docker](https://www.docker.com/)
+- Node 17+
 
 ## Test Scope
 
 | Feature | Test Type | Status | Notes |
 | --- | --- | --- | --- |
-| User Registration | UI + Validation | ⏳ | N/A |
-| User Login/Logout | UI + Session Handling | ⏳ | Check for session persistence |
+| User Registration | UI + Validation | ✅ | N/A |
+| User Login/Logout | UI + Session Handling | 🔄 | Check for session persistence |
 | Product Search & Filters | UI | ⏳ | Filter by category and other options available |
 | Product Preview | UI | ⏳ | Verifies product information is accurate |
 | Add to Cart | UI + Validation | ⏳ | Validates product is in the cart |
