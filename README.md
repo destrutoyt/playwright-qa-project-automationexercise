@@ -1,6 +1,6 @@
 # AutomationPractice QA Automation Project
 
-[![Coverage](https://img.shields.io/badge/Coverage-10%25-brightgreen)](https://github.com/destrutoyt/yourrepo)
+[![Coverage](https://img.shields.io/badge/Coverage-40%25-brightgreen)](https://github.com/destrutoyt/yourrepo)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/destrutoyt/qa-automation-automationexercise/playwright.yml)
 ![GitHub License](https://img.shields.io/github/license/destrutoyt/qa-automation-automationexercise)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/destrutoyt/qa-automation-automationexercise/main)
@@ -18,7 +18,7 @@ For detailed information about test objectives, scope, design, criteria, and ris
 - 📊 **[Allure](https://allurereport.org/)** – Visual test reports 
 - 🐳 **[Docker](https://www.docker.com/)** – Containerized, consistent environments  
 - ⚙️ **GitHub Actions** – CI pipeline for test execution and reporting
-- 💻 **Node 17+** - Used to stay up-to-date with today's market
+- 💻 **Node 17+** - Used to enable latest features
 
 ## ⚙️ Setup & Installation
 
