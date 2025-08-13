@@ -1,11 +1,13 @@
 import { test, expect } from '@playwright/test'
-import { RegistrationData, LoginData } from '../utils/types'
+import { RegistrationTypes, LoginTypes } from '../utils/types'
 import registrationData from '../utils/fixtures/registrationData.json'
+import loginData from '../utils/fixtures/loginData.json'
 
-test('@WEB - Register a new user', async ({ page }) => {
+// Registration & Login data (JSON > JS object)
+const login: LoginTypes = structuredClone(loginData)
+const registerData: RegistrationTypes = structuredClone(registrationData)
 
-  // Registration data (JSON > JS object)
-	const registerData: RegistrationData = structuredClone(registrationData)
+test('@AUTH - Register a new user', async ({ page }) => {
 
 	// Navigate to the registration page
 	await page.goto('/login')
@@ -60,6 +62,27 @@ test('@WEB - Register a new user', async ({ page }) => {
 	await page.click('[data-qa="continue-button"]')
 
 	// Delete account (optional step)
-	await page.goto('/delete_account')
-	await expect(page.locator('[data-qa="account-deleted"]')).toHaveText('Account Deleted!')
+	// await page.goto('/delete_account')
+	// await expect(page.locator('[data-qa="account-deleted"]')).toHaveText('Account Deleted!')
+})
+
+test('@AUTH - Login with existing user', async ({ page }) => {
+
+  // Navigate to the login page
+  await page.goto('/login')
+
+  // Fill in the login form
+  await page.fill('[data-qa="login-email"]', login.email)
+  await page.fill('[data-qa="login-password"]', login.password)
+  await page.click('[data-qa="login-button"]')
+
+  // Refreshes webpage and checks if user is logged in
+  await page.reload()
+  await expect(page.getByText('Logged in as ' + registerData.name)).toBeVisible()
+
+  // Logout and checks if user is logged in
+  await page.click('[href="/logout"]')
+  await page.goto('/')
+  await expect(page.getByText('Logged in as ' + registerData.name)).toBeHidden()
+
 })

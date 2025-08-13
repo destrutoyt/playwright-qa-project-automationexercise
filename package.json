@@ -9,7 +9,10 @@
 	"scripts": {
 		"test": "npx playwright test",
 		"test:headed": "npx playwright test --headed",
-		"test:debug": "npx playwright test --debug"
+		"test:debug": "npx playwright test --debug",
+		"test:auth": "npx playwright test tests/auth-flow.spec.ts",
+		"test:product": "npx playwright test tests/product-interactions.spec.ts",
+		"test:allure": "rimraf allure-results && npx playwright test && npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
 	},
 	"repository": {
 		"type": "git",
@@ -25,7 +28,8 @@
 	"devDependencies": {
 		"@playwright/test": "^1.54.2",
 		"@types/node": "^24.2.0",
-		"allure-playwright": "^3.3.3"
+		"allure-playwright": "^3.3.3",
+		"rimraf": "^6.0.1"
 	},
 	"dependencies": {
 		"prettier": "^3.6.2"

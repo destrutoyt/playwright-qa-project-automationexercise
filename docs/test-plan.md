@@ -29,9 +29,9 @@ This project performs end-to-end testing to the demo website [Automation Exercis
 | Feature | Test Type | Status | Notes |
 | --- | --- | --- | --- |
 | User Registration | UI + Validation | ✅ | N/A |
-| User Login/Logout | UI + Session Handling | 🔄 | Check for session persistence |
-| Product Search & Filters | UI | ⏳ | Filter by category and other options available |
-| Product Preview | UI | ⏳ | Verifies product information is accurate |
+| User Login/Logout | UI + Session Handling | ✅ | Check for session persistence |
+| Product Search & Filters | UI | ✅ | Filter by category and other options available |
+| Product Preview | UI | 🔄 | Verifies product information is accurate |
 | Add to Cart | UI + Validation | ⏳ | Validates product is in the cart |
 | Checkout Process | UI | ⏳ | N/A |
 | Purchase Confirmation | UI + Validation | ⏳ | Ensure successful purchase and verify product is found in "Orders" |
