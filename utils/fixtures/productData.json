@@ -2,15 +2,30 @@
     "products": [
         {
             "name": "Blue Top",
-            "price": 500
+            "price": "Rs. 500",
+            "category": "Women > Tops",
+            "availability": "In Stock",
+            "condition": "New",
+            "brand": "Polo",
+            "detailsUrl": "/product_details/1"
         },
         {
             "name": "Colour Blocked Shirt – Sky Blue",
-            "price": 849
+            "price": "Rs. 849",
+            "category": "Kids > Tops & Shirts",
+            "availability": "In Stock",
+            "condition": "New",
+            "brand": "Allen Solly Junior",
+            "detailsUrl": "/product_details/24"
         },
         {
             "name": "GRAPHIC DESIGN MEN T SHIRT - BLUE",
-            "price": 1389
+            "price": "Rs. 1389",
+            "category": "Men > Tshirts",
+            "availability": "In Stock",
+            "condition": "New",
+            "brand": "Mast & Harbour",
+            "detailsUrl": "/product_details/43"
         }
     ]
 }
