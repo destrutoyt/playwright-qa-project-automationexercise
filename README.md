@@ -1,6 +1,6 @@
 # AutomationPractice QA Automation Project
 
-[![Coverage](https://img.shields.io/badge/Coverage-40%25-brightgreen)](https://github.com/destrutoyt/yourrepo)
+[![Coverage](https://img.shields.io/badge/Coverage-50%25-brightgreen)](https://github.com/destrutoyt/yourrepo)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/destrutoyt/qa-automation-automationexercise/playwright.yml)
 ![GitHub License](https://img.shields.io/github/license/destrutoyt/qa-automation-automationexercise)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/destrutoyt/qa-automation-automationexercise/main)
