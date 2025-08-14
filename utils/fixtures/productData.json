@@ -1,6 +1,7 @@
 {
     "products": [
-        {
+        {   
+            "id": 1,
             "name": "Blue Top",
             "price": "Rs. 500",
             "category": "Women > Tops",
@@ -10,6 +11,7 @@
             "detailsUrl": "/product_details/1"
         },
         {
+            "id": 24,
             "name": "Colour Blocked Shirt – Sky Blue",
             "price": "Rs. 849",
             "category": "Kids > Tops & Shirts",
@@ -19,6 +21,7 @@
             "detailsUrl": "/product_details/24"
         },
         {
+            "id": 43,
             "name": "GRAPHIC DESIGN MEN T SHIRT - BLUE",
             "price": "Rs. 1389",
             "category": "Men > Tshirts",
