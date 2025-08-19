@@ -1,6 +1,6 @@
 {
 	"name": "qa-automation-automationexercise",
-	"version": "2.3",
+	"version": "2.4",
 	"description": "QA automation project showcasing UI, API, and visual tests for AutomationExercise. Integrated with Docker, Allure, and CI/CD pipelines.",
 	"main": "index.js",
 	"directories": {
