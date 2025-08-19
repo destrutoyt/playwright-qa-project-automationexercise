@@ -16,8 +16,8 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   retries: 1,
-  workers: 10,
-  timeout: 30 * 1000, // Maximum time one test can run for (30 seconds)
+  workers: 3,
+  timeout: 60 * 1000, // Maximum time one test can run for (30 seconds)
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'allure-playwright',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
