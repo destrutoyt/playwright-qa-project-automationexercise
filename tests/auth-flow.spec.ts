@@ -8,7 +8,6 @@ const login: LoginTypes = structuredClone(loginData)
 const registerData: RegistrationTypes = structuredClone(registrationData)
 
 test('@AUTH - Register a new user', async ({ page }) => {
-
 	// Navigate to the registration page
 	await page.goto('/login')
 
@@ -30,7 +29,9 @@ test('@AUTH - Register a new user', async ({ page }) => {
 	// Fill in the account details
 	await page.locator('.radio-inline').first().click() // Select Mr.
 	await expect(page.locator('[data-qa="name"]')).toHaveValue(registerData.name)
-	await expect(page.locator('[data-qa="email"]')).toHaveValue(registerData.email)
+	await expect(page.locator('[data-qa="email"]')).toHaveValue(
+		registerData.email,
+	)
 	await page.fill('[data-qa="password"]', registerData.password)
 
 	await page.locator('[data-qa="days"]').selectOption('1')
@@ -46,17 +47,24 @@ test('@AUTH - Register a new user', async ({ page }) => {
 	// await page.fill('[data-qa="company"]', 'Example Company'); // Optional field
 	await page.fill('[data-qa="address"]', registerData.address.address)
 	await page.fill('[data-qa="address2"]', registerData.address.address2)
-	await page.locator('[data-qa="country"]').selectOption(registerData.address.country)
+	await page
+		.locator('[data-qa="country"]')
+		.selectOption(registerData.address.country)
 	await page.fill('[data-qa="state"]', registerData.address.state)
 	await page.fill('[data-qa="city"]', registerData.address.city)
 	await page.fill('[data-qa="zipcode"]', registerData.address.zipcode)
-	await page.fill('[data-qa="mobile_number"]', registerData.address.mobile_number)
+	await page.fill(
+		'[data-qa="mobile_number"]',
+		registerData.address.mobile_number,
+	)
 
 	await page.click('[data-qa="create-account"]')
 
 	// Expect account creation success message
 	await page.waitForTimeout(2000) // Wait for the page to load
-	await expect(page.locator('[data-qa="account-created"]')).toHaveText('Account Created!')
+	await expect(page.locator('[data-qa="account-created"]')).toHaveText(
+		'Account Created!',
+	)
 
 	// Proceed to continue
 	await page.click('[data-qa="continue-button"]')
@@ -67,22 +75,22 @@ test('@AUTH - Register a new user', async ({ page }) => {
 })
 
 test('@AUTH - Login with existing user', async ({ page }) => {
+	// Navigate to the login page
+	await page.goto('/login')
 
-  // Navigate to the login page
-  await page.goto('/login')
+	// Fill in the login form
+	await page.fill('[data-qa="login-email"]', login.email)
+	await page.fill('[data-qa="login-password"]', login.password)
+	await page.click('[data-qa="login-button"]')
 
-  // Fill in the login form
-  await page.fill('[data-qa="login-email"]', login.email)
-  await page.fill('[data-qa="login-password"]', login.password)
-  await page.click('[data-qa="login-button"]')
+	// Refreshes webpage and checks if user is logged in
+	await page.reload()
+	await expect(
+		page.getByText('Logged in as ' + registerData.name),
+	).toBeVisible()
 
-  // Refreshes webpage and checks if user is logged in
-  await page.reload()
-  await expect(page.getByText('Logged in as ' + registerData.name)).toBeVisible()
-
-  // Logout and checks if user is logged in
-  await page.click('[href="/logout"]')
-  await page.goto('/')
-  await expect(page.getByText('Logged in as ' + registerData.name)).toBeHidden()
-
+	// Logout and checks if user is logged in
+	await page.click('[href="/logout"]')
+	await page.goto('/')
+	await expect(page.getByText('Logged in as ' + registerData.name)).toBeHidden()
 })

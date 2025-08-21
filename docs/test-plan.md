@@ -1,6 +1,7 @@
 # Test Plan for AutomationPractice by Miguel Garces
 *Project Owner: Miguel Garces*  
-*Latest Revision: 8/19/2025*
+*Latest Revision: 8/21/2025*
+*Completed: 8/21/2025*
 
 ## Project Overview
 This project performs end-to-end testing to the demo website [Automation Exercise](https://automationexercise.com/). It extensively covers major user flows such as login/registration, product filtering, checkout, and API functionality.
@@ -35,9 +36,9 @@ This project performs end-to-end testing to the demo website [Automation Exercis
 | Add to Cart | UI + Validation | ✅ | Validates product is in the cart |
 | Checkout Process | UI | ✅ | N/A |
 | Purchase Confirmation | UI + Validation | ✅ | Ensure successful purchase and verify product is found in "Orders" |
-| Contact Form | UI + Form Validation | 🔄 | N/A |
-| User Login (POST) | API | ⏳ | N/A |
-| Get Products (GET) | API | ⏳ | N/A |
+| Contact Form | UI + Form Validation | ✅ | N/A |
+| User Login (POST) | API | ✅ | Valid / Wrong credentials |
+| Get Products (GET) | API | ✅ | N/A |
 
 >Icon Legend: ⏳ Not Started - 🔄 In Progress - ✅ Covered - 🚫 Out of Scope
 
