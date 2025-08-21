@@ -63,11 +63,19 @@ test('@PRODUCT - Verify accurate product previews', async ({ page }) => {
 	for (const product of productData) {
 		await page.click(`[href="${product.detailsUrl}"]`)
 		await expect(page.getByText(product.name, { exact: true })).toBeVisible()
-		await expect(page.getByText(`Category: ${product.category}`, { exact: true })).toBeVisible()
+		await expect(
+			page.getByText(`Category: ${product.category}`, { exact: true }),
+		).toBeVisible()
 		await expect(page.getByText(product.price, { exact: true })).toBeVisible()
-		await expect(page.getByText(`Availability: ${product.availability}`, { exact: true })).toBeVisible()
-		await expect(page.getByText(`Condition: ${product.condition}`, { exact: true })).toBeVisible()
-		await expect(page.getByText(`Brand: ${product.brand}`, { exact: true })).toBeVisible()
+		await expect(
+			page.getByText(`Availability: ${product.availability}`, { exact: true }),
+		).toBeVisible()
+		await expect(
+			page.getByText(`Condition: ${product.condition}`, { exact: true }),
+		).toBeVisible()
+		await expect(
+			page.getByText(`Brand: ${product.brand}`, { exact: true }),
+		).toBeVisible()
 		await page.goBack()
 	}
 })

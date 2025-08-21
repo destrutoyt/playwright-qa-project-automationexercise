@@ -1,6 +1,6 @@
 {
 	"name": "qa-automation-automationexercise",
-	"version": "2.5",
+	"version": "2.6.0",
 	"description": "QA automation project showcasing UI, API, and visual tests for AutomationExercise. Integrated with Docker, Allure, and CI/CD pipelines.",
 	"main": "index.js",
 	"directories": {
@@ -13,6 +13,9 @@
 		"test:auth": "npx playwright test --grep @AUTH",
 		"test:product": "npx playwright test --grep @PRODUCT",
 		"test:cart": "npx playwright test --grep @CART",
+		"test:checkout": "npx playwright test --grep @CHECKOUT",
+		"test:contact": "npx playwright test --grep @CONTACT",
+		"test:api": "npx playwright test --grep @API",
 		"test:allure": "rimraf allure-results && npx playwright test && npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
 	},
 	"repository": {
