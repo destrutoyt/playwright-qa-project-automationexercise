@@ -1,4 +1,4 @@
-# AutomationPractice QA Automation Project (v2.6.0)
+# QA Automation Project (v2.6.0)
 
 [![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)](https://github.com/destrutoyt/yourrepo)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/destrutoyt/qa-automation-automationexercise/playwright.yml)
