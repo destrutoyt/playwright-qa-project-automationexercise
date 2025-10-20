@@ -23,7 +23,6 @@ test('@API - (POST) Verify login with wrong credentials', async ({ request }) =>
 
 	// Check the body for the API's error code
 	const body = await response.json()
-	console.log(body) // Verifies actual API response
 	expect(body.responseCode).toBe(400) // API seems to returned 400 code instead of 404.
 	expect(body.message).toBe('Bad request, email or password parameter is missing in POST request.') // API returns a different message than "User not found!" (Website docs might be outdated)
 })
@@ -34,9 +33,22 @@ test('@API - (GET) Get all products', async ({ request }) => {
 })
 
 // Additional API tests
-test('@API - (POST) - To All Product List is invalid', async ({ request }) => {
+test('@API - (POST) To All Product List is invalid', async ({ request }) => {
 	const response = await request.post('https://automationexercise.com/api/productsList')
 	expect(response.status()).toBe(200)
 	const body = await response.json()
 	expect(body.message).toBe('This request method is not supported.')
+})
+
+test('@API - (POST) Search Product with valid product', async ({ request }) => {
+	const response = await request.post('https://automationexercise.com/api/searchProduct', {
+		// used 'form' instead of 'data' because the API expects form-urlencoded data.
+		form: {	
+			search_product: 'top',
+		},
+	})
+	
+	expect(response.status()).toBe(200)
+	const body = await response.json()
+	expect(body.products.length).toBeGreaterThan(0)
 })
