@@ -1,16 +1,17 @@
 import { test, expect } from '@playwright/test'
 import { UserLogin } from '../page-objects/Login'
-import { RegistrationTypes, ProductTypes } from '../utils/types/'
-import products from '../utils/fixtures/productData.json'
-import registrationData from '../utils/fixtures/registrationData.json'
+import { UserDataTypes, ProductTypes } from '../utils/types/'
 import { AddressValidation } from '../page-objects/AddressValidation'
 
+import products from '../utils/fixtures/productData.json'
+import data from '../utils/fixtures/userData.json'
+
 export const productData: ProductTypes[] = products.products
-export const userData: RegistrationTypes = structuredClone(registrationData)
+export const userData: UserDataTypes = structuredClone(data)
 
 test.beforeEach(async ({ page }) => {
 	const userLogin = new UserLogin(page)
-	await userLogin.autoLogin() // Uses predefined credentials from loginData.json. Manual login with provided credentials is available.
+	await userLogin.autoLogin() // Uses predefined credentials from userData.json. Manual login with provided credentials is available.
 	await page.goto('/products')
 })
 
@@ -39,14 +40,14 @@ test('@CART - Checkout process', async ({ page }) => {
 	const addressValidator = new AddressValidation(page)
 	await addressValidator.load()
 
-	expect(addressValidator.fullname).toBe(userData.name)
-	expect(addressValidator.address1).toBe(userData.address.address)
-	expect(addressValidator.address2).toBe(userData.address.address2)
-	expect(addressValidator.city).toBe(userData.address.city)
-	expect(addressValidator.state).toBe(userData.address.state)
-	expect(addressValidator.zipcode).toBe(userData.address.zipcode)
-	expect(addressValidator.country).toBe(userData.address.country)
-	expect(addressValidator.mobileNumber).toBe(userData.address.mobile_number)
+	expect(addressValidator.fullname).toBe(userData.first_name + ' ' + userData.last_name) // Added first_name and last_name instead of name due to API limitation (see api-handling.spec.ts for more info)
+	expect(addressValidator.address1).toBe(userData.address1)
+	expect(addressValidator.address2).toBe(userData.address2)
+	expect(addressValidator.city).toBe(userData.city)
+	expect(addressValidator.state).toBe(userData.state)
+	expect(addressValidator.zipcode).toBe(userData.zipcode)
+	expect(addressValidator.country).toBe(userData.country)
+	expect(addressValidator.mobileNumber).toBe(userData.mobile_number)
 
 	// Validate order
 	const cartTable = page.locator('#cart_info tbody')

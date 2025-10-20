@@ -1,0 +1,19 @@
+{
+    "name": "Julian Andres",
+    "email": "johnDoe24@gmail.com",
+    "password": "johnDoe#24",
+    "title": "Mr",
+    "birth_date": "24",
+    "birth_month": "June",
+    "birth_year": "1990",
+    "first_name": "John",
+    "last_name": "Doe",
+    "company": "Tech Corp",
+    "address1": "123 Main St",
+    "address2": "Apt 4B",
+    "country": "United States",
+    "state": "California",
+    "city": "Los Angeles",
+    "zipcode": "90001",
+    "mobile_number": "1234567890"
+}

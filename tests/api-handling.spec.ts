@@ -52,3 +52,30 @@ test('@API - (POST) Search Product with valid product', async ({ request }) => {
 	const body = await response.json()
 	expect(body.products.length).toBeGreaterThan(0)
 })
+
+// NOTE: API does not update first_name or last_name even if provided.
+// These fields remain from registration data.
+test('@API - (PUT) Update User Info with Parameters', async ({ request }) => {
+	const response = await request.put('https://automationexercise.com/api/updateAccount', {
+		form: {
+			name: 'Julian Andres',
+			email: 'johnDoe24@gmail.com',
+			password: 'johnDoe#24',
+			title: 'Mr',
+			birth_date: `24`,
+			birth_month: `June`,
+			birth_year: `1990`,
+			company: 'Tech Corp',
+			address1: '123 Main St',
+			address2: 'Apt 4B',
+			country: 'United States',
+			state: 'California',
+			city: 'Los Angeles',
+			zipcode: '90001',
+			mobile_number: '1234567890',
+		},
+	})
+	expect(response.status()).toBe(200)
+	const body = await response.json()
+	expect(body.message).toBe('User updated!')
+})

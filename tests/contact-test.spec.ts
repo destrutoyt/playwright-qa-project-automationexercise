@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test'
 import { UserLogin } from '../page-objects/Login'
-import { LoginTypes } from '../utils/types'
-import loginData from '../utils/fixtures/loginData.json'
+import { UserDataTypes } from '../utils/types'
+import loginData from '../utils/fixtures/userData.json'
 
-const login: LoginTypes = structuredClone(loginData)
+const login: UserDataTypes = structuredClone(loginData)
 
 test.beforeEach(async ({ page }) => {
 	const userLogin = new UserLogin(page)
-	await userLogin.autoLogin() // Uses predefined credentials from loginData.json. Manual login with provided credentials is available.
+	await userLogin.autoLogin() // Uses predefined credentials from userData.json. Manual login with provided credentials is available.
 	await page.goto('/contact_us')
 })
 

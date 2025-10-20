@@ -1,3 +1,3 @@
 export * from './registrationTypes';
-export * from './loginTypes';
+export * from './userDataTypes';
 export * from './productTypes';

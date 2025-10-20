@@ -8,14 +8,12 @@ const productData: ProductTypes[] = products.products
 
 test.beforeEach(async ({ page }) => {
 	const userLogin = new UserLogin(page)
-	await userLogin.autoLogin() // Uses predefined credentials from loginData.json. Manual login with provided credentials is available.
+	await userLogin.autoLogin() // Uses predefined credentials from userData.json. Manual login with provided credentials is available.
 	await page.goto('/products')
+	await expect(page.getByText('Logged in as Julian Andres')).toBeVisible()
 })
 
 test('@PRODUCT - Search product by name', async ({ page }) => {
-	// Validates that user is logged in
-	await expect(page.getByText('Logged in as John Doe')).toBeVisible()
-
 	// Search for a product
 	await page.locator('[placeholder="Search Product"]').fill('Men Tshirt')
 	await page.click('#submit_search')
@@ -24,9 +22,6 @@ test('@PRODUCT - Search product by name', async ({ page }) => {
 	await expect(page.locator('.productinfo p')).toHaveText('Men Tshirt')
 })
 test('@PRODUCT - Search multiple products by name', async ({ page }) => {
-	// Validates that user is logged in
-	await expect(page.getByText('Logged in as John Doe')).toBeVisible()
-
 	// Search for multiple products
 	for (const product of productData) {
 		await page.locator('[placeholder="Search Product"]').fill(product.name)
