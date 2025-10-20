@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test'
-import { RegistrationTypes, LoginTypes } from '../utils/types'
+import { RegistrationTypes, UserDataTypes } from '../utils/types'
 import registrationData from '../utils/fixtures/registrationData.json'
-import loginData from '../utils/fixtures/loginData.json'
+import data from '../utils/fixtures/userData.json'
 
 // Registration & Login data (JSON > JS object)
-const login: LoginTypes = structuredClone(loginData)
+const userData: UserDataTypes = structuredClone(data)
 const registerData: RegistrationTypes = structuredClone(registrationData)
 
 test('@AUTH - Register a new user', async ({ page }) => {
@@ -79,18 +79,18 @@ test('@AUTH - Login with existing user', async ({ page }) => {
 	await page.goto('/login')
 
 	// Fill in the login form
-	await page.fill('[data-qa="login-email"]', login.email)
-	await page.fill('[data-qa="login-password"]', login.password)
+	await page.fill('[data-qa="login-email"]', data.email)
+	await page.fill('[data-qa="login-password"]', data.password)
 	await page.click('[data-qa="login-button"]')
 
 	// Refreshes webpage and checks if user is logged in
 	await page.reload()
 	await expect(
-		page.getByText('Logged in as ' + registerData.name),
+		page.getByText('Logged in as ' + data.name),
 	).toBeVisible()
 
 	// Logout and checks if user is logged in
 	await page.click('[href="/logout"]')
 	await page.goto('/')
-	await expect(page.getByText('Logged in as ' + registerData.name)).toBeHidden()
+	await expect(page.getByText('Logged in as ' + data.name)).toBeHidden()
 })

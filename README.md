@@ -1,10 +1,10 @@
-# QA Automation Project (v2.6.2)
+# QA Automation Project (v2.6.3)
 
 [![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)](https://github.com/destrutoyt/yourrepo)
 ![Build Status](https://img.shields.io/github/actions/workflow/status/destrutoyt/qa-automation-automationexercise/playwright.yml)
 ![GitHub License](https://img.shields.io/github/license/destrutoyt/qa-automation-automationexercise)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/destrutoyt/qa-automation-automationexercise/main)
-![version](https://img.shields.io/badge/version-2.6.2-blue)
+![version](https://img.shields.io/badge/version-2.6.3-blue)
 
 ## 🚀 Project Overview
 
@@ -40,7 +40,7 @@ Latest Build Status:
 ![Latest Build](./images/docker-success-build.png)
 
 ## ⚠️ Issues
-As of version 2.6.0 (08/21/2025):  
+As of version 2.6.3 (10/20/2025):  
 - ✅ Tests are stable and running successfully  
 - ✅ Docker builds complete without errors  
 - ⚠️ If you encounter any issues, please submit a pull request with suggested fixes

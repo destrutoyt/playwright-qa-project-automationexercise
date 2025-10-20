@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test'
-import loginData from '../utils/fixtures/loginData.json'
+import loginData from '../utils/fixtures/userData.json'
 
 export class UserLogin {
 	private page: Page
